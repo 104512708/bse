@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script>
+        var dep = [{ dname: '计算机系', link: 'http://jsjx.gdsspt.cn' },
+        { dname: '机械系', link: 'http://jxx.gdsspt.cn:81/' },
+        { dname: '外语系', link: 'http://wyx.gdsspt.cn:81' }];
+        $.each(dep, i => $("<li>").text(dep[i].dname).appendTo($(document.body)));
+        $("li").wrapAll("<ol>");
+        $("li").wrapInner(i => $("<a/>").prop("href", dep[i].link));
+        $("li a").wrap(i=>$("<h2>")); 
+        </script>
+        
+</body>
+</html>

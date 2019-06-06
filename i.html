@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+        <label for="pName">省份</label>
+        <input id="pName" name="province" />
+        <label for="cName">城市</label>
+        <input id="cName" name="city" /> 
+        <select name="type"><option>省会</option>
+        <option>其他</option></select>
+        <div><button id="bn1">提交</button></div>
+        <div>简介</div>
+        <textarea name="note" cols="100" rows="15"></textarea>
+        <span id="show"></span></div>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script>
+             $("#bn1").click(function(){
+                 console.log($("#main [name]").serialize());
+                 console.log($("#main [name]").serializeArray());
+                 console.log($.param({user:"admin",pass:"abc.123"}));
+         })</script>
+        
+</body>
+</html>

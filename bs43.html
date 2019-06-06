@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>进度条</h2>
+        <div class="progress my-2 bg-secondary">
+            <div class="progress-bar"></div>
+        </div>
+        <div class="progress my-2 bg-danger" style="height: 32px">
+            <div class="progress-bar bg-success"></div>
+        </div>
+        <div class="progress my-2 bg-danger">
+            <div class="progress-bar progress-bar-striped"></div>
+        </div>
+        <div class="progress my-2">
+            <div class="progress-bar bg-info"></div>
+            <div class="progress-bar bg-danger" style="width:1%"></div>
+        </div>
+    </div>
+    <script>
+        function proc(a) {
+            document.querySelectorAll(".progress-bar:nth-child(1)").forEach(e => {
+                e.style.width = a + "%";
+                e.innerHTML = a + '%';
+            })
+        }
+        var a = 0;
+        var v = setInterval(() => {
+            a = a + 1;
+            proc(a);
+            if (a == 99) document.querySelector(".progress-bar:nth-child(2)").style.width = 0;
+            if (a >= 100) clearInterval(v);
+        }, 100);        
+    </script>
+
+</body>
+
+</html>

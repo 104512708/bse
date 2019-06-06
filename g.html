@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <dl>
+        <dt>员工管理</dt>
+        <dd><div><a href="#">添加员工</a></div>
+        <div><a href="#">管理员工</a></div></dd>
+         <dt>招聘管理</dt>
+        <dd><div><a href="#">浏览信息</a></div>
+        <div><a href="#">添加信息</a></div>
+        <div><a href="#">管理人才</a></div></dd>
+    </dl>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+    $("dd").hide();
+    $("dt").click(function () {
+          $(this).next().slideToggle("slow");
+    });
+    </script>
+    
+</body>
+</html>

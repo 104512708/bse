@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main">
+        <div>用户名
+            <input id="user" />
+        </div>
+        <div>旧密码
+            <input name="pass" />
+        </div>
+        <div>新密码
+            <input name="newpass" />
+        </div>
+        <div>
+            <button id="upd">修改密码</button>
+        </div>
+        <div id="result"></div>
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        $("#upd").click(function(){
+            var data=$("#main [name]").serialize();
+            $.ajax({
+                type:"put",
+                url:"http://127.0.0.1:168/updPass?user="
+                +$("#user").val(),
+                data:data,
+                success:function(res){
+                    $("#result").html(res);
+                }
+
+            })
+        })
+    
+    </script>
+
+
+</body>
+
+</html>

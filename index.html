@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>姓名</th>                
+                <th>工资</th>                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td>杨勇辉</td>                
+                <td>10912.3</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>胡丽美</td>                
+                <td>12942.8</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>邱雄龙</td>                
+                <td>7961.3</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>李丽芳</td>                
+                <td>6876</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>王琨</td>                
+                <td>5955.6</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>陈小波</td>                
+                <td>17978.1</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>李梅欣</td>                
+                <td>9954.6</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <style>
+        table {
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0;
+            border-spacing: 1;
+            width: 50%;
+            background-color: #3F873B;
+            font-size: 16px;
+        }
+
+        td {
+            padding: 3px;
+            text-align: center;            
+        }
+
+        th {
+            background-color: #b6df48
+        }
+        .even {
+            background-color: #e8f3d1
+        }
+
+        .odd {
+            background-color: #f9fcef 
+        }
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        $("tbody tr:even").addClass("even");
+        $("tbody tr:odd").addClass("odd");
+        $("tbody tr").each(function(i){
+            $(this).children().first().html(i+1);
+            var td=$(this).children().last();
+            td.html(Number(td.html()).toLocaleString('zn-Cn',{ style:'currency',currency:'CNY'}));
+        })
+
+
+    </script>
+</body>
+
+</html>

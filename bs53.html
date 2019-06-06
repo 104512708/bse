@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap-native-v4.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>手风琴实例</h2>
+        <p>
+            <strong>data-parent折叠元素在父元素下，能实现一个折叠显示时其他隐藏。</p>
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                        选项一
+                    </a>
+                </div>
+                <div id="collapseOne" class="collapse show">
+                    <div class="card-body">
+                        #1 内容：菜鸟教程 -- 学的不仅是技术，更是梦想！！！
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapseTwo" >
+                        选项二
+                    </a>
+                </div>
+                <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        #2 内容：菜鸟教程 -- 学的不仅是技术，更是梦想！！！
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapseThree" >
+                        选项三
+                    </a>
+                </div>
+                <div id="collapseThree" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        #3 内容：菜鸟教程 -- 学的不仅是技术，更是梦想！！！
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

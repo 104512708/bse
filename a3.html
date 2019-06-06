@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main">
+        <div>用户名
+            <input name="user" />
+        </div>
+        <div>密码
+            <input name="pass" />
+        </div>
+        <div>
+            <button id="login">登录</button>
+        </div>
+        <div id="result"></div>
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        $("#login").click(function(){
+            // var req="user="+$("#user").val();
+            // req+="&pass="+$("pass").val();
+            // console.log("http://127.0.0.1:168/login?"+req);
+            var data=$("#main [name]").serialize();
+            console.log(data);
+            $("#result").load("http://127.0.0.1:168/login",data);
+        })
+    </script>
+
+</body>
+
+</html>

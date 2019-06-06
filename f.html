@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <select size="10" multiple>
+            </select> 
+            <script src="js/jquery-3.3.1.min.js"></script>
+            <script>
+            var spes=["计算机应用技术","计算机信息管理","移动互联应用技术","软件技术","计算机网络技术"];
+            $.each(spes,i=>$("<option>").appendTo("select")); 
+            $("option").replaceWith(i=>$("<option>").text(spes[i])); 
+            $("select").val(["计算机信息管理","软件技术"]);
+            var a=$(":selected").clone();
+            // $(a).replaceAll($("option:last"));
+            $("option:last").replaceWith(a);
+            $("option:eq(0)").empty();
+            $("option:eq(2)").remove();
+            </script>
+            
+</body>
+</html>

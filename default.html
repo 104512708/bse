@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <table>
+                <tr>
+                    <th>省份</th>
+                    <th>城市</th>
+                </tr>
+                <tbody id="tb">
+                    <tr img='gz.jpg'>
+                        <td>广东</td>
+                        <td>广州</td>
+                    </tr>
+                    <tr img='mz.jpg'>
+                        <td>广东</td>
+                        <td>梅州</td>
+                    </tr>
+                    <tr img='zh.jpg'>
+                        <td>广东</td>
+                        <td>珠海</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <img alt="城市照片" />
+        </div>
+    </div>
+    <style>
+        div:first-child {
+            margin-left: auto;
+            margin-right: auto;
+            width: 400px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        table {
+            padding: 0;
+            border-spacing: 1;
+            width: 50%;
+            background-color: #3F873B;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        td {
+            padding: 3px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #b6df48
+        }
+    </style>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>    
+        $("#tb tr").css("background-color", "#f9fcef");
+        var curRow = null;
+        $("#tb tr").click(function () {
+            if (curRow != null)
+                curRow.css("background-color", "#f9fcef");
+            var row = $(this);
+            row.css("background-color", "#a8f3d1");
+            $("img").prop("src", "img/" + row.attr("img"));
+            curRow = row;
+        });
+        $("#tb tr:first").trigger("click");
+        $("img").hover(
+            function () {
+                $(this).css("border", "1px dashed")
+            },
+            function () {
+                $(this).css("border", "0")
+            }
+        )
+        $("img").click(function(){
+            $(this).fadeOut(3000)
+                   .fadeIn(4000);
+        })
+        $("td").mouseenter(e=>
+            $(e.target).toggle(false)
+                       .toggle(2000)
+        )
+
+
+    </script>
+</body>
+
+</html>

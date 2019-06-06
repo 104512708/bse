@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="js/bootstrap-native-v4.min.js"></script>
+</head>
+
+<body>
+    <h4>导航栏+文本框</h4>
+    <nav class="navbar fixed-bottom navbar-expand-sm bg-info navbar-dark row">    
+        <div class="navbar-nav col-12">        
+            <div class="nav-item active">            
+                <a class="nav-link" href="#"> link1</a>
+                </div>        
+            <div class="nav-item dropdown">            
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                    Dropdown link</a>            
+                <div class="dropdown-menu">                
+                    <a class="dropdown-item" href="#">Link 1</a>                
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    </div>
+                </div>
+            <div class="input-group col-md-5 col-xl-4 ml-auto">            
+                <div class="input-group-prepend">                
+                    <label class="input-group-text form-control">                    
+                        <i class="fa fa-search"></i>
+                        </label>
+                    </div>            
+                <input class="form-control" placeholder="搜索内容">
+                <div class="input-group-append">                
+                    <button class="btn btn-primary form-control">搜索</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+</body>
+
+</html>

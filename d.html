@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <hr/>
+        <select size="10">
+             <option>计算机应用技术</option>
+             <option selected>计算机信息管理</option>
+             <option>软件技术</option>
+        </select>
+        <hr/><hr/>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script> 
+        $("select option:selected").before($("<option>").text("计算机网络技术"));
+        $("select option:selected").after($("<option>").text("移动互联应用技术"));
+        $("<option>").text("数字媒体应用技术")
+                             .insertAfter($("select option:selected"));
+        var deps=['计算机系','机械系','外语系'];
+        $("hr").before(i=>$("<div>").html(deps[i]));
+        </script>
+        
+</body>
+</html>
